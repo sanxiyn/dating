@@ -1,5 +1,6 @@
 from base import Spider
 from base import get, get_url
+from utils import clean
 
 sorry = 'Sorry, the profile of this lady has already been removed from our website!'
 
@@ -14,5 +15,6 @@ class CharmDateSpider(Spider):
         id = id[1:]
         location = get(response, '.b_bountry::text').strip()
         city, country = location.split(', ')
+        city = clean(city)
         url = get_url(response, 'div.pro_l_pht a img::attr(src)')
         yield {'id': id, 'country': country, 'city': city, 'url': url}

@@ -1,5 +1,6 @@
 from base import Spider
 from base import get, get_element, get_url
+from utils import clean
 
 class AsianDateSpider(Spider):
     name = 'asiandate'
@@ -11,6 +12,7 @@ class AsianDateSpider(Spider):
         _, id = get(response, 'div.lady-id span::text').split(': ')
         location = get_element(response, '.ladyProfile-content td:nth-child(2) div:nth-last-child(2)')
         _, city, country = (text.strip('\r\n\t ,') for text in location.css('::text').extract())
+        city = clean(city)
         url = get_url(response, '.lady-star-name div.lady-thumbnail-container img::attr(href)')
         if url is None:
             return
