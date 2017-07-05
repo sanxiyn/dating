@@ -26,7 +26,7 @@ class BeHappy2daySpider(scrapy.Spider):
             yield scrapy.Request(url)
 
     def parse(self, response):
-        id = get(response, 'table#tbl_ tr:nth_child(1) td:nth_child(2)::text')
+        id = get(response, 'table#tbl_ tr:nth-child(1) td:nth-child(2)::text')
         location = get(response, 'table#tbl_ td a::text')
         city, country = location.split(', ')
         url = get_url(response, 'img.sp_menu_avatar::attr(src)')
