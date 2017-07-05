@@ -10,7 +10,7 @@ class AsianDateSpider(Spider):
             return
         _, id = get(response, 'div.lady-id span::text').split(': ')
         location = get_element(response, '.ladyProfile-content td:nth-child(2) div:nth-last-child(2)')
-        _, city, country = (text.strip('\r\n ,') for text in location.css('::text').extract())
+        _, city, country = (text.strip('\r\n\t ,') for text in location.css('::text').extract())
         url = get_url(response, '.lady-star-name div.lady-thumbnail-container img::attr(href)')
         if url is None:
             return
