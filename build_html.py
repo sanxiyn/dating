@@ -2,6 +2,7 @@ import json
 
 sites = {
     'anastasiadate': 'http://www.anastasiadate.com/pages/lady/profile/profilepreview.aspx?LadyID={}',
+    'asiandate': 'http://www.asiandate.com/pages/lady/profile/profilepreview.aspx?LadyID={}',
     'charmdate': 'http://www.charmdate.com/photogallery/woman.php?womanid=C{}',
     'behappy2day': 'https://www.behappy2day.com/girls_info.php?i={}',
     'romancecompass': 'https://romancecompass.com/gallery/profile/{}/',
