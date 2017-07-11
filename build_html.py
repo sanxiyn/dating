@@ -23,6 +23,7 @@ def write(items, args):
             id = item['id']
             link = sites[args.site].format(id)
             url = item['url']
+            url = url.encode('utf-8')
             f.write('<a href="{}"><img src="{}"></a>\n'.format(link, url))
 
 import argparse
