@@ -1,3 +1,4 @@
+import errno
 import json
 import os
 import subprocess
@@ -21,8 +22,12 @@ def download(items, dirname):
         p = subprocess.Popen(['curl', '-s', url, '-o', path])
         pids.add(p.pid)
     while pids:
-        pid, _ = os.wait()
-        pids.remove(pid)
+        try:
+            pid, _ = os.wait()
+            pids.remove(pid)
+        except OSError as e:
+            if e.errno == errno.ECHILD:
+                break
 
 import argparse
 parser = argparse.ArgumentParser()
