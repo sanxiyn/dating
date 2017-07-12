@@ -9,6 +9,7 @@ sites = {
     'behappy2day': 'https://www.behappy2day.com/girls_info.php?i={}',
     'romancecompass': 'https://romancecompass.com/gallery/profile/{}/',
     'jump4love': 'https://j4l.com/user_{}.love',
+    'dreamconnections': 'http://www.dreamconnections.com/ladies/profile/index.php?ladiesID={}',
 }
 
 def read(filename):
