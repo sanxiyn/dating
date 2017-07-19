@@ -35,6 +35,7 @@ cyrillic_table = make_table({
     'CYRILLIC CAPITAL LETTER PE': 'P',
     'CYRILLIC CAPITAL LETTER ER': 'R',
     'CYRILLIC CAPITAL LETTER ES': 'S',
+    'CYRILLIC CAPITAL LETTER TE': 'T',
     'CYRILLIC SMALL LETTER A': 'a',
     'CYRILLIC SMALL LETTER VE': 'v',
     'CYRILLIC SMALL LETTER DE': 'd',
@@ -48,4 +49,5 @@ cyrillic_table = make_table({
     'CYRILLIC SMALL LETTER PE': 'p',
     'CYRILLIC SMALL LETTER ER': 'r',
     'CYRILLIC SMALL LETTER ES': 's',
+    'CYRILLIC SMALL LETTER TE': 't',
 })
