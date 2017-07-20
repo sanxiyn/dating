@@ -16,15 +16,14 @@ def get_url(response, selector):
 
 class Spider(scrapy.Spider):
 
-    def __init__(self, start=None, end=None):
-        if start is None:
-            raise Exception('start is required')
-        if end is None:
-            raise Exception('end is required')
-        self.start = int(start)
-        self.end = int(end)
+    def __init__(self, n=None):
+        if n is None:
+            raise Exception('n is required')
+        self.n = int(n)
 
     def start_requests(self):
-        for i in range(self.start, self.end):
+        start = self.n * 1000
+        end = start + 1000
+        for i in range(start, end):
             url = self.url_format.format(i)
             yield scrapy.Request(url)
