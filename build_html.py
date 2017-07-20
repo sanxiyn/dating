@@ -24,6 +24,8 @@ def read(filename):
 
 def write(items, args):
     with open(args.output, 'w') as f:
+        if args.width is not None:
+            f.write('<style>img {{ width: {}px; }}</style>\n'.format(args.width))
         for item in items:
             id = item['id']
             link = sites[args.site].format(id)
@@ -33,6 +35,7 @@ def write(items, args):
 
 import argparse
 parser = argparse.ArgumentParser()
+parser.add_argument('--width')
 parser.add_argument('site')
 parser.add_argument('input')
 parser.add_argument('output')
