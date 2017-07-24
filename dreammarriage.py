@@ -12,6 +12,8 @@ class DreamMarriageSpider(Spider):
             return
         if 'Invalid Profile ID' in response.body:
             return
+        if 'This profile is incomplete' in response.body:
+            return
         _, id = get(response, 'h1::text').split(': ')
         country = get(response, 'div.top_wrapper table tr:nth-child(3) td:nth-child(2)::text')
         city = get(response, 'div.top_wrapper table tr:nth-child(2) td:nth-child(2)::text')
